@@ -28,12 +28,12 @@
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@types/chrome": "^0.0.159",
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
-    "esbuild": "^0.13.15",
-    "rimraf": "^6.0.1",
-    "sass": "^1.77.8",
-    "typescript": "^4.9.5"
+    "@types/chrome": "^0.1.42",
+    "@types/react": "^18.3.29",
+    "@types/react-dom": "^18.3.7",
+    "esbuild": "^0.28.0",
+    "rimraf": "^6.1.3",
+    "sass": "^1.100.0",
+    "typescript": "^6.0.3"
   }
 }

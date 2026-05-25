@@ -19,12 +19,12 @@ const scssPlugin = {
         });
 
         build.onLoad({ filter: /\.scss$/ }, args => {
-            const { css, stats: { includedFiles } } = sass.renderSync({ file: args.path });
+            const result = sass.compile(args.path);
 
             return {
-                contents: css.toString('utf-8'),
+                contents: result.css,
                 loader: 'css',
-                watchFiles: includedFiles
+                watchFiles: result.loadedUrls.map(u => u.pathname)
             }
         });
     }
@@ -46,17 +46,22 @@ const buildOptions = {
 
     // dev options
     sourcemap: dev ? 'inline' : false,
-    watch: dev,
 
     // prod options
     metafile: prod
 };
 
 async function build() {
-    const result = await esbuild.build(buildOptions).catch(() => process.exit(1));
+    if (dev) {
+        const ctx = await esbuild.context(buildOptions);
+        await ctx.watch();
+        console.log('watching...');
+    } else {
+        const result = await esbuild.build(buildOptions).catch(() => process.exit(1));
 
-    if (result.metafile) {
-        console.log(await esbuild.analyzeMetafile(result.metafile));
+        if (result.metafile) {
+            console.log(await esbuild.analyzeMetafile(result.metafile));
+        }
     }
 }
 
