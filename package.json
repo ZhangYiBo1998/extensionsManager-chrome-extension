@@ -1,7 +1,7 @@
 {
-  "name": "empty-chrome-extension",
+  "name": "extensions-manager",
   "version": "0.0.1",
-  "description": "A chrome extension for empty.",
+  "description": "A chrome extension for extensionsManager.",
   "scripts": {
     "clean": "rimraf build/",
     "build:static": "xcopy /E /I public build\\",
@@ -15,14 +15,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ZhangYiBo1998/empty-chrome-extension.git"
+    "url": "git+https://github.com/ZhangYiBo1998/extensionsManager-chrome-extension.git"
   },
   "author": "zhangyibo",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ZhangYiBo1998/empty-chrome-extension/issues"
+    "url": "https://github.com/ZhangYiBo1998/extensionsManager-chrome-extension/issues"
   },
-  "homepage": "https://github.com/ZhangYiBo1998/empty-chrome-extension",
+  "homepage": "https://github.com/ZhangYiBo1998/extensionsManager-chrome-extension",
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
